@@ -19,9 +19,11 @@ export const App = () => {
         if (responded.ok) {
           const data = await responded.json();
           setCountries(data);
+          setLoading(false);
         } else {
-          setError("País no encontrado");
+          setError("Pais no encontrado");
           setCountries([]);
+          setLoading(false);
         }
       } catch (err) {
         setCountries([]);
@@ -43,14 +45,14 @@ export const App = () => {
       <div className="search-box">
         <input
           type="text"
-          placeholder="Escribe un país..."
+          placeholder="Escribe un pais..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
       </div>
 
       {loading ? <p>Cargando...</p> : null}
-      {error ? <p className="error">{error}</p> : null}
+      {error ? <p>{error}</p> : null}
 
       <div className="results">
         {countries.map((c) => (
