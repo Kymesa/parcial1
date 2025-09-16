@@ -1,13 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PARCIAL 1</title>
+    <title>Buscador de Países</title>
+    <link rel="stylesheet" href="css/app.css" />
   </head>
-  <body style="background-color: white">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <body>
+    <div class="container">
+      <h1>Buscador de información de países</h1>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Escribe un país..." />
+        <button id="searchButton">Buscar</button>
+      </div>
+
+      <div id="results" class="results"></div>
+    </div>
+
+    <script src="js/app.js"></script>
   </body>
 </html>
