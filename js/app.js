@@ -2,9 +2,7 @@ const searchInput = document.getElementById("searchInput");
 const searchButton = document.getElementById("searchButton");
 const resultsContainer = document.getElementById("results");
 
-searchButton.addEventListener("click", handleSearch);
-
-async function handleSearch() {
+const handleSearch = async () => {
   const query = searchInput.value;
 
   if (query.length === 0) {
@@ -50,4 +48,6 @@ async function handleSearch() {
   } catch (error) {
     resultsContainer.innerHTML = `<p>${error.message}</p>`;
   }
-}
+};
+
+searchButton.addEventListener("click", handleSearch);
